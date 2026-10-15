@@ -2,3 +2,9 @@
 2. Compiling code (iverilog -Wall -g2012).
 3. Running test benches (iverilog -Wall -g2012, then ./a.out).
 4. Running the automated test suite (pytest).
+
+rtl/ source files
+tb/ waveform test benches
+tests/ pytest calls corresponding cocotb test module
+
+test/cocotb/ cocotb test modules
