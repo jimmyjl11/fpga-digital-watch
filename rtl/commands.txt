@@ -1,0 +1,4 @@
+1. More thorough linting (verilator -Wall --lint-only).
+2. Compiling code (iverilog -Wall -g2012).
+3. Running test benches (iverilog -Wall -g2012, then ./a.out).
+4. Running the automated test suite (pytest).
