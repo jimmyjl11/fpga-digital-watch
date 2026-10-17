@@ -8,3 +8,40 @@ tb/ waveform test benches
 tests/ pytest calls corresponding cocotb test module
 
 test/cocotb/ cocotb test modules
+
+
+
+4'h0: segments_active_high = 7'd64;  // 1000000
+4'h1: segments_active_high = 7'd121; // 1111001
+4'h2: segments_active_high = 7'd36;  // 0100100
+4'h3: segments_active_high = 7'd48;  // 0110000
+4'h4: segments_active_high = 7'd25;  // 0011001
+4'h5: segments_active_high = 7'd18;  // 0010010
+4'h6: segments_active_high = 7'd2;   // 0000010
+4'h7: segments_active_high = 7'd120; // 1111000
+4'h8: segments_active_high = 7'd0;   // 0000000
+4'h9: segments_active_high = 7'd16;  // 0010000
+4'ha: segments_active_high = 7'd8;   // 0001000
+4'hb: segments_active_high = 7'd3;   // 0000011
+4'hc: segments_active_high = 7'd70;  // 1000110
+4'hd: segments_active_high = 7'd33;  // 0100001
+4'he: segments_active_high = 7'd6;   // 0000110
+4'hf: segments_active_high = 7'd14;  // 0001110
+
+
+4'h0: segments_active_high = 7'h40;
+4'h1: segments_active_high = 7'h79;
+4'h2: segments_active_high = 7'h24;
+4'h3: segments_active_high = 7'h30;
+4'h4: segments_active_high = 7'h19;
+4'h5: segments_active_high = 7'h12;
+4'h6: segments_active_high = 7'h02;
+4'h7: segments_active_high = 7'h78;
+4'h8: segments_active_high = 7'h00;
+4'h9: segments_active_high = 7'h10;
+4'ha: segments_active_high = 7'h08;
+4'hb: segments_active_high = 7'h03;
+4'hc: segments_active_high = 7'h46;
+4'hd: segments_active_high = 7'h21;
+4'he: segments_active_high = 7'h06;
+4'hf: segments_active_high = 7'h0E;
