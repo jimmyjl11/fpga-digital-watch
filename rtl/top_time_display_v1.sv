@@ -22,7 +22,6 @@ module top_time_display_v1 #(
 
 
   logic clock_1k, clock_25, clock_1s;
-  logic var_clock;
   logic enable = 1'b1;  // permanently on for now
   logic [SecWidth - 1:0] seconds;
   logic [MinWidth - 1:0] minutes;
@@ -54,14 +53,17 @@ module top_time_display_v1 #(
   );
 
 
-  always_comb
+  logic selected_tick;
+
+  always_comb begin
     case (SW)
-      2'b00:   var_clock = clock_1s;
-      2'b01:   var_clock = clock_25;
-      2'b10:   var_clock = clock_1k;
-      2'b11:   var_clock = CLOCK_50;
-      default: var_clock = clock_1s;
+      2'b00:   selected_tick = clock_1s;
+      2'b01:   selected_tick = clock_25;
+      2'b10:   selected_tick = clock_1k;
+      2'b11:   selected_tick = 1'b1;
+      default: selected_tick = 1'b0;
     endcase
+  end
 
   hms_counter #(
       .N_HOURS  (HourPerDay),
@@ -71,8 +73,8 @@ module top_time_display_v1 #(
       .W_MINUTES(MinWidth),
       .W_SECONDS(SecWidth)
   ) u_hms_counter (
-      .clk(var_clock),
-      .enable(enable),
+      .clk(CLOCK_50),
+      .enable(selected_tick),
       .hours(hours),
       .minutes(minutes),
       .seconds(seconds)

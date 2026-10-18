@@ -14,9 +14,12 @@ module pwm_generator #(
   localparam logic [CounterWidth-1:0] CriticalCount = CounterWidth'(DUTY_CYCLES);
   logic [CounterWidth-1:0] count;
 
-  always_comb
-    if (count >= CriticalCount) pwm_out = 1'b0;
+  always_comb begin
+    if (DUTY_CYCLES >= PERIOD_CYCLES)
+      pwm_out = 1'b1;  // fixed case where duty cycles equal period cycles
+    else if (count >= CriticalCount) pwm_out = 1'b0;
     else pwm_out = 1'b1;
+  end
 
   mod_n_counter #(
       .N(PERIOD_CYCLES),
