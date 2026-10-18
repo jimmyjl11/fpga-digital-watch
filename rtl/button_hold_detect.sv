@@ -7,7 +7,9 @@ module button_hold_detect #(
     output logic held
 );
   localparam int CountMax = HOLD_CYCLES - 1;
-  localparam int CountWidth = $clog2(CountMax + 1);
+  localparam int CountWidth = (HOLD_CYCLES > 1) ? $clog2(
+      HOLD_CYCLES
+  ) : 1;  // gate zero width counter
 
   logic count_rst;
   logic count_enable;
