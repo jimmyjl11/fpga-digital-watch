@@ -45,3 +45,4 @@ test/cocotb/ cocotb test modules
 4'hd: segments_active_high = 7'h21;
 4'he: segments_active_high = 7'h06;
 4'hf: segments_active_high = 7'h0E;
+blank: segments_active_high = 7'h7f;
