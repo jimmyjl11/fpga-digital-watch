@@ -86,7 +86,7 @@ module user_top_watch_v4 #(
       .CYCLE_COUNT(CYCLES_PER_SECOND)
   ) u_divider_1_Hz (
       .clk (clk),
-      .run (~seconds_edit),
+      .run (~seconds_edit), // changed from 1'b1 to !seconds_edit. Resets run whilst in seconds edit
       .tick(seconds_tick)
   );
   // unused signals
