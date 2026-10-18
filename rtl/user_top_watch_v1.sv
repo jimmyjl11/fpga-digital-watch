@@ -103,9 +103,3 @@ module user_top_watch_v1 #(
   assign minutes_tick = (seconds_disp == 7'd59) && seconds_tick;
   assign hours_tick = (minutes_disp == 7'd59) && (seconds_disp == 7'd59) && seconds_tick;
 endmodule
-
-/* verilator lint_off UNDRIVEN */
-
-// Your temporarily undriven signals
-
-/* verilator lint_on UNDRIVEN */
